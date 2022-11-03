@@ -1,0 +1,27 @@
+{
+  "name": "sushi-kitchen",
+  "version": "1.0.0",
+  "description": "REST API | Sushi Kitchen",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malykdim/sushi-kitchen.git"
+  },
+  "keywords": [],
+  "author": "Albena Kostova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malykdim/sushi-kitchen/issues"
+  },
+  "homepage": "https://github.com/malykdim/sushi-kitchen#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.1"
+  }
+}
