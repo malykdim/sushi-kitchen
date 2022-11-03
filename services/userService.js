@@ -50,7 +50,11 @@ function createToken(user) {
 }
 
 function parseToken(token) {
-    // TODO: scan blacklist for token
+    if (tokenBlacklist.has(token)) {
+        throw new Error('Token is blacklisted');
+    }
+    
+    return jwt.verify(token, process.env.TOKEN_SECRET);
 }
 
 module.exports = {

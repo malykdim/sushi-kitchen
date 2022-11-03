@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const cors = require('./middlewares/cors');
+const trimBody = require('./middlewares/trimBody');
+const session = require('./middlewares/session');
 const authController = require('./controllers/authController');
 const dataController = require('./controllers/dataController');
 
@@ -17,6 +19,8 @@ async function start() {
     
     app.use(express.json());
     app.use(cors());
+    app.use(trimBody());
+    app.use(session());
     
     app.get('/', (req, res) => {
         res.json({ message: 'REST Service operational' });
