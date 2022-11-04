@@ -30,10 +30,15 @@ async function deleteItem(id) {
     return Item.findByIdAndDelete(id);
 }
 
+async function getByUserId(userId) {
+    return Item.find({ _chefId: userId});
+}
+
 module.exports = {
     getAllItems,
     getItembyId,
     createItem,
     updateItem,
-    deleteItem
+    deleteItem,
+    getByUserId
 }

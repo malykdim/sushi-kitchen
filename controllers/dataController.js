@@ -1,13 +1,19 @@
 const dataController = require('express').Router();
 
 const { hasUser } = require('../middlewares/guards');
-const { getAllItems, createItem, getItembyId, updateItem, deleteItem } = require('../services/itemService');
+const { getAllItems, createItem, getItembyId, updateItem, deleteItem, getByUserId } = require('../services/itemService');
 const { parseError } = require('../util/parser');
 
 /* '/' */
 dataController.get('/', async (req, res) => {
     try {
-        const items = await getAllItems();
+        let items = [];
+        if (req.query.where) {
+            const userId = JSON.parse(req.query.where.split('=')[1]);
+            items = await getByUserId(userId);
+        } else {
+            items = await getAllItems();            
+        }
         res.json(items);    
     } catch (error) {
         const message = parseError(error);
