@@ -1,5 +1,11 @@
 const { Schema, model, Types: { ObjectId } } = require('mongoose');
 
+// const reviewSchema = new Schema({
+//     name: { type: String, required: true },
+//     rating: { type: Number, required: true },
+//     comment: { type: String, required: true }
+// }, { timestamps: true });
+
 const URL_PATTERN = /^https?:\/\/.+$/i;
 
 const itemSchema = new Schema({
@@ -15,7 +21,6 @@ const itemSchema = new Schema({
         },
         required: true 
     },
-    price: { type: Number, min: [1, 'Price must be a positive number'] },
     category: { 
         type: String, 
         enum: {
@@ -32,6 +37,11 @@ const itemSchema = new Schema({
         },
         required: true         
     },
+    price: { type: Number, min: [1, 'Price must be a positive number'] },
+    // countInStock: { type: Number, default: 0 },
+    // rating: { type: Number, default: 0 },
+    // reviews: [reviewSchema],
+    // reviewsCount: { type: Number, default: 0 },
     _chefId: { type: ObjectId, ref: 'User', required: true }
 });
 
