@@ -37,14 +37,10 @@ const itemSchema = new Schema({
         },
         required: true         
     },
+    temperature: { type: String, required: true },
     price: { type: Number, min: [1, 'Price must be a positive number'] },
-    // countInStock: { type: Number, default: 0 },
-    // rating: { type: Number, default: 0 },
-    // reviews: [reviewSchema],
-    // reviewsCount: { type: Number, default: 0 },
     _chefId: { type: ObjectId, ref: 'User', required: true }
 });
-
 
 
 const Item = model('Item', itemSchema);
