@@ -1,6 +1,11 @@
 # sushi-kitchen
 # REST API for **sushi-bar**
 
+```
+npm install
+npm start
+```
+
 URL: http://localhost:3030
 
 ('/') GET ---> WELCOME 
