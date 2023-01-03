@@ -27,7 +27,7 @@ async function start() {
     });
     
     app.use('/users', authController);
-    app.use('/data/catalog', dataController);
+    app.use('/data/catalog', dataController);    
     
     app.listen(3030, () => console.log(`REST Service started at ${process.env.HOST}:${process.env.PORT}`));    
 }

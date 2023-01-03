@@ -7,6 +7,7 @@ function parseError(error) {
         return Object.values(error.errors).map(v => v.message).join('\n');
     } else {
         console.log('dev error');
+        console.log(error.message);
         return error.message;
     }
 }

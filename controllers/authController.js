@@ -38,4 +38,22 @@ authController.get('/logout', async (req, res) => {
     res.status(204).end();
 });
 
+// TODO: /auth/users GET
+// authController.get('/users', async (req, res) => {
+//     try {
+//         let users = [];
+//         if (req.query.where) {
+//             const userId = JSON.parse(req.query.where.split('=')[1]);
+//             users = await getByUserId(userId);
+//         } else {
+//             users = await getAllUsers();            
+//         }
+//         res.json(users);    
+//     } catch (error) {
+//         const message = parseError(error);
+//         res.status(400).json({ message });
+//     }
+// }); // eventually... ? // TEST!
+
+
 module.exports = authController;

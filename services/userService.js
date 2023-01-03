@@ -45,6 +45,7 @@ function createToken(user) {
     return {
         _id: user._id,
         email: user.email,
+        role: user.role,
         accessToken: jwt.sign(payload, process.env.TOKEN_SECRET)
     };
 }

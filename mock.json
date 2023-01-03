@@ -1,0 +1,10 @@
+{
+    "name": "item 1",
+    "image": "string",
+    "category": "maki",
+    "ingredients": [
+        "reise",
+        "tuna"
+    ],
+    "price": "3"
+}
